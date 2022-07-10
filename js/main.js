@@ -1,5 +1,7 @@
 // Main solo será para manejo de estados y manipulacion de DOM
+
 // *** GLOBAL VARIABLES ***
+let game //variable global de la clase Game{}
 
 // seleccion de canvas y creación del contexto
 const canvas = document.querySelector("#my-canvas")
@@ -12,26 +14,41 @@ const startBtn = document.querySelector("#start-btn");
 
 // *** FUNCTIONS startScreenDOM ***
 
+// const gameLoop = () => {
 
-const gameLoop = () => {
-
-}
+// }
 
 // inicia el juego.
 const startGame = () => {
-   console.log('iniciando juego')
+   // console.log('iniciando juego')
    startScreenDOM.style.display = 'none';
    canvas.style.display = "block"
 
-   // Se crea un nuevo obj de la clase Game{}
-   const game = new Game()
-   console.log(game)
+   // Se crea un nuevo obj que instancia la clase Game{}
+   game = new Game()
+
+   // console.log(game)
+   game.gameLoop() //invoco f. recursiva para iniciar el juego
 
 }
 
-gameLoop() //invoca la función recursiva
+// gameLoop() //invoca la función recursiva
 
 // *** ADD EVENT LISTENERS ***
 
+// eventListener al botón start para empezar el juego
 startBtn.addEventListener('click', startGame)
 
+// eventlistener para movimientos del personaje
+window.addEventListener('keydown', ({key}) =>{
+   if (key === "ArrowDown" && game.person.y + game.person.h > 0 ){
+      game.person.moveDownPerson()
+      console.log('abajo')
+   }
+})
+
+window.addEventListener('keydown', ({key}) =>{
+   if (key === "ArrowUp" && game.person.y ) {
+      game.person.moveUpPerson()
+   }
+})
