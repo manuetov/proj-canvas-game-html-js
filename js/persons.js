@@ -1,12 +1,12 @@
 class Persons {
     constructor() {
         this.image = new Image()
-        this.image.src = "./images/lucky.jpg"
+        this.image.src = "./images/lucky-luke_1.jpg"
         this.x = 20
         this.y = canvas.height / 2
         this.w = 100
-        this.h = 100
-        this.speed = 10
+        this.h = canvas.height * 0.2
+        this.speed = 5
 
     }
 
@@ -17,11 +17,11 @@ class Persons {
 
     // movimiento persons
     moveUpPerson() {
-        this.y -= 10
+        this.y -= this.speed
     }
 
     moveDownPerson() {
-        this.y += 10
+        this.y += this.speed
     }
 
     // colision con los otros personajes

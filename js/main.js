@@ -41,14 +41,14 @@ startBtn.addEventListener('click', startGame)
 
 // eventlistener para movimientos del personaje
 window.addEventListener('keydown', ({key}) =>{
-   if (key === "ArrowDown" && game.person.y + game.person.h > 0 ){
+   if (key === "ArrowDown" && game.person.y + game.person.h < canvas.height){
       game.person.moveDownPerson()
       console.log('abajo')
    }
 })
 
 window.addEventListener('keydown', ({key}) =>{
-   if (key === "ArrowUp" && game.person.y ) {
+   if (key === "ArrowUp" && game.person.y > 0) {
       game.person.moveUpPerson()
    }
 })
