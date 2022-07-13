@@ -4,25 +4,25 @@
 let game //variable global de la clase Game{}
 let sfx = {
    fire: new Howl({
-      src: '../sounds/gunshot.wav'
+      src: './sounds/gunshot.wav'
    }),
    granMa: new Howl({
       src: 'https://assets.codepen.io/21542/howler-sfx-levelup.mp3'
    }),
    ahhh: new Howl({
-      src: '../sounds/ahhhh-abuelina.wav'
+      src: './sounds/ahhhh-abuelina.wav'
    }),
    maleSream: new Howl({
-      src: '../sounds/male-scream-2.wav'
+      src: './sounds/male-scream-2.wav'
    }),
    loseAbu: new Howl({
-      src: '../sounds/lose_abuelina.wav'
+      src: './sounds/lose_abuelina.wav'
    }),
    loseDal: new Howl({
-      src: '../sounds/lose_dalton.wav'
+      src: './sounds/lose_dalton.wav'
    }),
    punch: new Howl({
-      src: '../sounds/dalton-punch.wav'
+      src: './sounds/dalton-punch.wav'
    })
 
 
