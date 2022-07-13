@@ -4,8 +4,8 @@ class Persons {
         this.image.src = "./images/lucky-luke_1.jpg"
         this.x = 20
         this.y = canvas.height / 2
-        this.w = 100
-        this.h = canvas.height * 0.2
+        this.w = 80
+        this.h = canvas.height * 0.15
         this.speed = 5
 
     }

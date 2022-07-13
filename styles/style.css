@@ -7,7 +7,7 @@ body {
   background-color: darkgray;
 }
 
-#start-btn {
+#start-btn, #restart-btn {
   background-color: rgb(155, 140, 5);
   color: white;
   padding: 20px;
@@ -24,6 +24,6 @@ body {
   margin: 50px;
 }
 
-#my-canvas {
-  display: none /* quiero ocultar el elemento */
+#my-canvas, #gameover-screen {
+  display: none /* oculta los elemento */ 
 }

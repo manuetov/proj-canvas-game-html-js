@@ -1,4 +1,4 @@
-class Enemies {
+class Friends {
    constructor(yParam, srcParam) {
       this.image = new Image()
       this.image.src = srcParam
@@ -7,15 +7,17 @@ class Enemies {
       this.w = 80
       this.h = canvas.height * 0.15
       this.speed = 2
+
   }
 
   // pinta al personajeS
-  drawEnemy() {
+  drawFriend() {
    ctx.drawImage(this.image, this.x, this.y, this.w, this.h) 
   }
 
-  enemyMove() {
+  friendMove() {
    this.x -= this.speed
   }
+
 
 }

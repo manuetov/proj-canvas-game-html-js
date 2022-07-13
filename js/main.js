@@ -8,20 +8,20 @@ const canvas = document.querySelector("#my-canvas")
 const ctx = canvas.getContext('2d');
 
 // elementos de DOM
-const startScreenDOM = document.querySelector("#start-screen");
+const startScreen = document.querySelector("#start-screen");
 const startBtn = document.querySelector("#start-btn");
+const gameOverScreen = document.querySelector("#gameover-screen")
+const restartBtn = document.querySelector("#restart-btn")
+const pauseBtn = document.querySelector("#pause-btn")
 
 
 // *** FUNCTIONS startScreenDOM ***
 
-// const gameLoop = () => {
-
-// }
-
 // inicia el juego.
 const startGame = () => {
    // console.log('iniciando juego')
-   startScreenDOM.style.display = 'none';
+   startScreen.style.display = "none";
+   gameOverScreen.style.display = "none"
    canvas.style.display = "block"
 
    // Se crea un nuevo obj que instancia la clase Game{}
@@ -32,12 +32,22 @@ const startGame = () => {
 
 }
 
-// gameLoop() //invoca la función recursiva
+// pausa el juego y lo reactiva
+const pauseGame = () => {
+   if (!game.isGamePause){
+      game.isGamePause = true
+   } else {
+      game.isGamePause = false
+      game.gameLoop()
+   }
+}
 
 // *** ADD EVENT LISTENERS ***
 
-// eventListener al botón start para empezar el juego
+// eventListener al botón start/restart para empezar el juego
 startBtn.addEventListener('click', startGame)
+restartBtn.addEventListener('click', startGame)
+pauseBtn.addEventListener('click', pauseGame)
 
 // eventlistener para movimientos del personaje
 window.addEventListener('keydown', ({key}) =>{
@@ -50,5 +60,12 @@ window.addEventListener('keydown', ({key}) =>{
 window.addEventListener('keydown', ({key}) =>{
    if (key === "ArrowUp" && game.person.y > 0) {
       game.person.moveUpPerson()
+   }
+})
+
+window.addEventListener('keydown', ({key}) =>{
+   if (key === "Control" ){
+      game.addProjectile()
+      // game.projectile.projectileMove()
    }
 })
