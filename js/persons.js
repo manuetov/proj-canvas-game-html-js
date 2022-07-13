@@ -6,7 +6,7 @@ class Persons {
         this.y = canvas.height / 2
         this.w = 80
         this.h = canvas.height * 0.15
-        this.speed = 5
+        this.speed = 10
 
     }
 

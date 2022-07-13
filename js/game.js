@@ -61,7 +61,8 @@ class Game {
                this.enemyArr.splice(i, 1)
                this.projectileArr.splice(j, 1)
                this.count +=5
-               score.innerHTML = Number(game.count)
+               score.innerHTML = Number(this.count)
+               sfx.maleSream.play()
                // console.log(`CONTADOR = ${this.count}`)
          }
       })  
@@ -80,7 +81,8 @@ class Game {
                this.friendArr.splice(i, 1)
                this.projectileArr.splice(j, 1)
                this.count -=5
-               score.innerHTML = Number(game.count)
+               score.innerHTML = Number(this.count)
+               sfx.ahhh.play()
                // console.log(`CONTADOR = ${this.count}`)
          }
       })  
@@ -94,6 +96,7 @@ class Game {
             eachEnemy.y < this.person.y + this.person.h &&
             eachEnemy.h + eachEnemy.y > this.person.y) {
             // console.log('ENEMY - COLISIÓN ')
+            sfx.punch.play()
             this.isGameOn = false
             this.gameOver()
          }
@@ -108,7 +111,8 @@ class Game {
             eachFriend.h + eachFriend.y > this.person.y) {
             this.friendArr.splice(i, 1) // elimino el elemento objeto del array
             this.count +=2
-            score.innerHTML = Number(game.count)
+            score.innerHTML = Number(this.count)
+            sfx.granMa.play()
             // console.log(`CONTADOR = ${this.count}`)
          }
       })   
@@ -120,7 +124,8 @@ class Game {
       if (this.enemyArr[0].x + this.enemyArr[0].w < 0 ) {
          this.enemyArr.shift()
          this.count -=3
-         score.innerHTML = Number(game.count)
+         score.innerHTML = Number(this.count)
+         sfx.loseDal.play()
       }
    }
    
@@ -130,7 +135,9 @@ class Game {
       if (this.friendArr[0].x + this.friendArr[0].w < 0) {
          this.friendArr.shift()
          this.count -=3
-         score.innerHTML = Number(game.count) 
+         score.innerHTML = Number(this.count) 
+         console.log(score.innerHTML)
+         sfx.loseAbu.play()
       }
    }
    
@@ -139,7 +146,7 @@ class Game {
       this.isGameOn = false;
       canvas.style.display = "none"
       gameOverScreen.style.display = "flex"
-      pauseBtn.style.display= "none"
+      pauseBtn.style.display= "none"     
  }
 
    gameLoop = () => {

@@ -27,13 +27,14 @@ body {
 
  .score{
   position: fixed;
+  top: 0vw !important;
+  left: 1vh  !important;
+
   z-index: 10;
-  color: black;
-  font-size: 40px;
-  position: relative;
- 
+  color: rgb(255, 0, 0);
+  font-size: 3rem;
 }
 
-#my-canvas, #gameover-screen, #pause-btn{
+#my-canvas, #gameover-screen, #pause-btn {
   display: none /* oculta los elemento */ 
 }

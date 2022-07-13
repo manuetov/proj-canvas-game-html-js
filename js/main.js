@@ -2,6 +2,32 @@
 
 // *** GLOBAL VARIABLES ***
 let game //variable global de la clase Game{}
+let sfx = {
+   fire: new Howl({
+      src: '../sounds/gunshot.wav'
+   }),
+   granMa: new Howl({
+      src: 'https://assets.codepen.io/21542/howler-sfx-levelup.mp3'
+   }),
+   ahhh: new Howl({
+      src: '../sounds/ahhhh-abuelina.wav'
+   }),
+   maleSream: new Howl({
+      src: '../sounds/male-scream-2.wav'
+   }),
+   loseAbu: new Howl({
+      src: '../sounds/lose_abuelina.wav'
+   }),
+   loseDal: new Howl({
+      src: '../sounds/lose_dalton.wav'
+   }),
+   punch: new Howl({
+      src: '../sounds/dalton-punch.wav'
+   })
+
+
+
+}
 
 // seleccion de canvas y creación del contexto
 const canvas = document.querySelector("#my-canvas")
@@ -17,6 +43,7 @@ const pauseBtn = document.querySelector("#pause-btn")
 const score = document.querySelector("#scoreDOM")
 
 
+
 // *** FUNCTIONS startScreenDOM ***
 
 // inicia el juego.
@@ -27,9 +54,11 @@ const startGame = () => {
    canvas.style.display = "block"
    pauseBtn.style.display = "block"
    score.style.display = "block"
+ 
    
    // Se crea un nuevo obj que instancia la clase Game{}
    game = new Game()
+
 
    // console.log(game)
    game.gameLoop() //invoco f. recursiva para iniciar el juego
@@ -54,21 +83,44 @@ restartBtn.addEventListener('click', startGame)
 pauseBtn.addEventListener('click', pauseGame)
 
 // eventlistener para movimientos del personaje
+
 window.addEventListener('keydown', ({key}) =>{
-   if (key === "ArrowDown" && game.person.y + game.person.h < canvas.height){
-      game.person.moveDownPerson()
+   switch (key){
+      case "ArrowDown":
+         if (game.person.y + game.person.h < canvas.height){
+            game.person.moveDownPerson()
+         }
+         break
+      case "ArrowUp":
+         if (game.person.y > 0) {
+            game.person.moveUpPerson()
+         }
+         break
+      case "Control":
+         game.addProjectile()
+         sfx.fire.play()
+         break
    }
 })
 
-window.addEventListener('keydown', ({key}) =>{
-   if (key === "ArrowUp" && game.person.y > 0) {
-      game.person.moveUpPerson()
-   }
-})
 
-window.addEventListener('keydown', ({key}) =>{
-   if (key === "Control" ){
-      game.addProjectile()
-      // game.projectile.projectileMove()
-   }
-})
+// window.addEventListener('keydown', ({key}) =>{
+//    if (key === "ArrowDown" && game.person.y + game.person.h < canvas.height){
+//       game.person.moveDownPerson()
+//    }
+// })
+
+// window.addEventListener('keydown', ({key}) =>{
+//    if (key === "ArrowUp" && game.person.y > 0) {
+//       game.person.moveUpPerson()
+//    }
+// })
+
+// window.addEventListener('keydown', ({key}) =>{
+//    if (key === "Control" ){
+      
+//       game.addProjectile()
+//       sfx.fire.play()
+//       // game.projectile.projectileMove()
+//    }
+// })
