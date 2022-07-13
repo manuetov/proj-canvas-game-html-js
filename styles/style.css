@@ -22,8 +22,18 @@ body {
   justify-content: center;
   align-items: center;
   margin: 50px;
+  z-index: 1
 }
 
-#my-canvas, #gameover-screen {
+ .score{
+  position: fixed;
+  z-index: 10;
+  color: black;
+  font-size: 40px;
+  position: relative;
+ 
+}
+
+#my-canvas, #gameover-screen, #pause-btn{
   display: none /* oculta los elemento */ 
 }

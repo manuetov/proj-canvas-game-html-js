@@ -7,12 +7,14 @@ let game //variable global de la clase Game{}
 const canvas = document.querySelector("#my-canvas")
 const ctx = canvas.getContext('2d');
 
+
 // elementos de DOM
 const startScreen = document.querySelector("#start-screen");
 const startBtn = document.querySelector("#start-btn");
 const gameOverScreen = document.querySelector("#gameover-screen")
 const restartBtn = document.querySelector("#restart-btn")
 const pauseBtn = document.querySelector("#pause-btn")
+const score = document.querySelector("#scoreDOM")
 
 
 // *** FUNCTIONS startScreenDOM ***
@@ -23,7 +25,9 @@ const startGame = () => {
    startScreen.style.display = "none";
    gameOverScreen.style.display = "none"
    canvas.style.display = "block"
-
+   pauseBtn.style.display = "block"
+   score.style.display = "block"
+   
    // Se crea un nuevo obj que instancia la clase Game{}
    game = new Game()
 
@@ -53,7 +57,6 @@ pauseBtn.addEventListener('click', pauseGame)
 window.addEventListener('keydown', ({key}) =>{
    if (key === "ArrowDown" && game.person.y + game.person.h < canvas.height){
       game.person.moveDownPerson()
-      console.log('abajo')
    }
 })
 
