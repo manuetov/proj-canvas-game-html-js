@@ -3,22 +3,21 @@
 // *** GLOBAL VARIABLES ***
 let game //variable global de la clase Game{}
 let fire = new Audio()
-fire.src ="../sounds/gunshot.mp3"
+fire.src ="./sounds/gunshot.mp3"
 let ahhh = new Audio()
-ahhh.src ="../sounds/ahhhh-abuelina.wav"
+ahhh.src ="./sounds/ahhhh-abuelina.wav"
 let loseAbu = new Audio()
-loseAbu.src ="../sounds/lose_abuelina.wav"
+loseAbu.src ="./sounds/lose_abuelina.wav"
 let granMa = new Audio()
 granMa.src = 'https://assets.codepen.io/21542/howler-sfx-levelup.mp3'
 let maleScream = new Audio()
-maleScream.src = '../sounds/male-scream-2.wav'
+maleScream.src = './sounds/male-scream-2.wav'
 let punch = new Audio()
-punch.src ="../sounds/dalton-punch.wav"
+punch.src ="./sounds/dalton-punch.wav"
 let loseDal = new Audio()
-loseDal.src = "../sounds/lose_dalton.wav"
+loseDal.src = "./sounds/lose_dalton.wav"
 let music = new Audio()
-music.src = "../sounds/honky-tonk-piano-ragtime-melody.wav"
-
+music.src = "./sounds/honky-tonk-piano-ragtime-melody.wav"
 
 
 // efectos de sonido
