@@ -64,7 +64,7 @@ class Game {
                this.enemyArr.splice(i, 1)
                this.projectileArr.splice(j, 1)
                this.count +=5
-               score.innerHTML = Number(this.count)
+               scoreDOM.innerHTML = Number(this.count)
                maleScream.play()
                // console.log(`CONTADOR = ${this.count}`)
          }
@@ -84,7 +84,7 @@ class Game {
                this.friendArr.splice(i, 1)
                this.projectileArr.splice(j, 1)
                this.count -=5
-               score.innerHTML = Number(this.count)
+               scoreDOM.innerHTML = Number(this.count)
                ahhh.play()
                // console.log(`CONTADOR = ${this.count}`)
          }
@@ -115,7 +115,7 @@ class Game {
             eachFriend.h + eachFriend.y > this.person.y) {
             this.friendArr.splice(i, 1) // elimino el elemento objeto del array
             this.count +=2
-            score.innerHTML = Number(this.count)
+            scoreDOM.innerHTML = Number(this.count)
             granMa.play()
             // console.log(`CONTADOR = ${this.count}`)
          }
@@ -128,7 +128,7 @@ class Game {
       if (this.friendArr < 0 && this.friendArr[0].x + this.friendArr[0].w < 0) {
          this.enemyArr.shift()
          this.count -=3
-         score.innerHTML = Number(this.count)
+         scoreDOM.innerHTML = Number(this.count)
          loseDal.play()
       }
    }
@@ -139,8 +139,8 @@ class Game {
       if (this.friendArr < 0 && this.friendArr[0].x + this.friendArr[0].w < 0) {
          this.friendArr.shift()
          this.count -=3
-         score.innerHTML = Number(this.count) 
-         console.log(score.innerHTML)
+         scoreDOM.innerHTML = Number(this.count) 
+         console.log(scoreDOM.innerHTML)
          loseAbu.play()
       }
    }

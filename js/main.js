@@ -63,7 +63,7 @@ const startBtn = document.querySelector("#start-btn");
 const gameOverScreen = document.querySelector("#gameover-screen")
 const restartBtn = document.querySelector("#restart-btn")
 const pauseBtn = document.querySelector("#pause-btn")
-const score = document.querySelector("#scoreDOM")
+const scoreDOM = document.querySelector("#scoreDOM")
 
 
 
@@ -76,7 +76,7 @@ const startGame = () => {
    gameOverScreen.style.display = "none"
    canvas.style.display = "block"
    pauseBtn.style.display = "block"
-   score.style.display = "block"
+   scoreDOM.style.display = "block"
  
    
    // Se crea un nuevo obj que instancia la clase Game{}

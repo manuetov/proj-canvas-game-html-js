@@ -42,14 +42,15 @@ h2 {
   color: #3b1010;
   margin: 0.5rem;
 }
-.score {
+.score, #scoreDOM, span{
   background: #ffe5cf;
   padding: 0 3rem;
+  font-size: 1.5rem;
   line-height: 1;
-  border-radius: 1rem;
+  border-radius: 1rem; 
   color: #3b1010;
 }
 
-#my-canvas, #gameover-screen, #pause-btn {
+#my-canvas, #gameover-screen, #pause-btn{
   display: none /* oculta los elemento */ 
 }
