@@ -41,6 +41,7 @@ class Game {
                
          let friend = new Friends(random1, "./images/abuelina1.png")
          this.friendArr.push(friend)
+
          if (this.count > 10) {
             let enemy1 = new Enemies(canvas.width-100, random1, "./images/dalton.gif")
             this.enemyArr.push(enemy1)
@@ -53,10 +54,28 @@ class Game {
          }else if (this.count > 100) {
             let enemy = new Enemies(canvas.width-200, random,"./images/dalton.gif")
             this.enemyArr.push(enemy)
+         }else if (this.count > 130){
+            let enemy1 = new Enemies(canvas.width-300, random1, "./images/dalton.gif")
+            this.enemyArr.push(enemy1)
+         }else if (this.count > 160) {
+            let enemy = new Enemies(canvas.width-300, random,"./images/dalton.gif")
+            this.enemyArr.push(enemy)  
          }
-      }   
+         else if (this.count > 190) {
+            let enemy1 = new Enemies(canvas.width-400, random1, "./images/dalton.gif")
+            this.enemyArr.push(enemy1)
+         }else if (this.count > 220){
+            let enemy = new Enemies(canvas.width-400, random,"./images/dalton.gif")
+            this.enemyArr.push(enemy)
+         }else if (this.count > 250){
+            let enemy1 = new Enemies(canvas.width-500, random1, "./images/dalton.gif")
+            this.enemyArr.push(enemy1)
+         }else if (this.count > 280) {
+            let enemy = new Enemies(canvas.width-500, random,"./images/dalton.gif")
+            this.enemyArr.push(enemy)
+         }
+      }
    }
-
    addProjectile = () => {
       let projectile = new Projectiles(this.person.x, this.person.y)
       this.projectileArr.push(projectile)
