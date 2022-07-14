@@ -22,7 +22,7 @@ class Game {
       
       this.count = 0
 
-      this.music = true
+      this.music = true // muscia de fondo 
    }
    
    // agrego enemigos al array
@@ -41,7 +41,7 @@ class Game {
       // let enemy1 = new Enemies(random + persoPlusDistance * 2, "./images/dalton.gif")
       // this.enemyArr.push(enemy1)
 
-      let friend = new Friends(random1 , "./images/abuelina.png")
+      let friend = new Friends(random1 , "./images/abuelina1.png")
       this.friendArr.push(friend)
       }   
    }

@@ -1,7 +1,7 @@
 class Projectiles {
    constructor(xParam, yParam){
       this.image = new Image()
-      this.image.src = "./images/bullet.jpg"
+      this.image.src = "./images/bullet.png"
       this.x = xParam
       this.y = yParam
       this.speed = 5

@@ -1,7 +1,7 @@
 class Persons {
     constructor() {
         this.image = new Image()
-        this.image.src = "./images/lucky-luke_1.jpg"
+        this.image.src = "./images/lucky-luke_1.png"
         this.x = 20
         this.y = canvas.height / 2
         this.w = 80

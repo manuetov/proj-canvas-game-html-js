@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   background-color: lightgray;
@@ -25,14 +31,23 @@ body {
   z-index: 1
 }
 
- .score{
-  position: fixed;
-  top: 0vw !important;
-  left: 1vh  !important;
+h1 {
+  font-size: 4.5rem;
+  line-height: 1;
+  margin: 3 3 0 0 rem;
+}
 
-  z-index: 10;
-  color: rgb(255, 0, 0);
-  font-size: 3rem;
+h2 {
+  font-size: 2rem;
+  color: #3b1010;
+  margin: 0.5rem;
+}
+.score {
+  background: #ffe5cf;
+  padding: 0 3rem;
+  line-height: 1;
+  border-radius: 1rem;
+  color: #3b1010;
 }
 
 #my-canvas, #gameover-screen, #pause-btn {

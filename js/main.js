@@ -7,13 +7,13 @@ fire.src ="./sounds/gunshot.mp3"
 fire.volume = 0.1
 let ahhh = new Audio()
 ahhh.src ="./sounds/ahhhh-abuelina.wav"
-ahh.volume = 0.1
+ahhh.volume = 0.1
 let loseAbu = new Audio()
 loseAbu.src ="./sounds/lose_abuelina.wav"
 loseAbu.volume = 0.1
 let granMa = new Audio()
 granMa.src = 'https://assets.codepen.io/21542/howler-sfx-levelup.mp3'
-granMa..volume = 0.1
+granMa.volume = 0.1
 let maleScream = new Audio()
 maleScream.src = './sounds/male-scream-2.wav'
 maleScream.volume = 0.1
@@ -122,6 +122,7 @@ window.addEventListener('keydown', ({key}) =>{
          break
       case "Control":
          game.addProjectile()
+         fire.currentTime = 0
          fire.play()  
          break
    }
