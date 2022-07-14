@@ -27,6 +27,8 @@ let music = new Audio()
 music.src = "./sounds/honky-tonk-piano-ragtime-melody.wav"
 music.volume = 0.1
 
+
+
 // efectos de sonido
 // let sfx = {
 //    fire: new Howl({
@@ -77,7 +79,7 @@ const startGame = () => {
    canvas.style.display = "block"
    pauseBtn.style.display = "block"
    scoreDOM.style.display = "block"
- 
+   
    
    // Se crea un nuevo obj que instancia la clase Game{}
    game = new Game()
@@ -86,6 +88,7 @@ const startGame = () => {
 
    // console.log(game)
    game.gameLoop() //invoco f. recursiva para iniciar el juego
+   scoreDOM.innerHTML = 0
 
 }
 
@@ -93,6 +96,7 @@ const startGame = () => {
 const pauseGame = () => {
    if (!game.isGamePause){
       game.isGamePause = true
+      music.pause()
    } else {
       game.isGamePause = false
       game.gameLoop()

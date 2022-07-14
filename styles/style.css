@@ -42,7 +42,7 @@ h2 {
   color: #3b1010;
   margin: 0.5rem;
 }
-.score, #scoreDOM, span{
+.score, #scoreDOM, span, #pause-btn{
   background: #ffe5cf;
   padding: 0 3rem;
   font-size: 1.5rem;

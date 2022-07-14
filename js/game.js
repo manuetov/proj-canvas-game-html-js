@@ -22,7 +22,8 @@ class Game {
       
       this.count = 0
 
-      this.music = true // muscia de fondo 
+
+      // this.music = true // muscia de fondo 
    }
    
    // agrego enemigos al array
@@ -158,6 +159,7 @@ class Game {
       // limpio canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
+      music.play()
       // PINTADO DE ELEMENTOS
       ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height)
       // pinto personaje principal
@@ -202,11 +204,10 @@ class Game {
       this.removeArrFriends()
 
       // efecto de recursión. todo el funcionamiento del juego lo controlamos desde aquí.
-      if (this.isGameOn && this.music && this.isGamePause === false) {
+      if (this.isGameOn && this.isGamePause === false) {
          requestAnimationFrame(this.gameLoop)
       } 
    }
 
-  
 
 }
