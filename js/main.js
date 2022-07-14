@@ -2,32 +2,49 @@
 
 // *** GLOBAL VARIABLES ***
 let game //variable global de la clase Game{}
-let sfx = {
-   fire: new Howl({
-      src: './sounds/gunshot.wav'
-   }),
-   granMa: new Howl({
-      src: 'https://assets.codepen.io/21542/howler-sfx-levelup.mp3'
-   }),
-   ahhh: new Howl({
-      src: './sounds/ahhhh-abuelina.wav'
-   }),
-   maleSream: new Howl({
-      src: './sounds/male-scream-2.wav'
-   }),
-   loseAbu: new Howl({
-      src: './sounds/lose_abuelina.wav'
-   }),
-   loseDal: new Howl({
-      src: './sounds/lose_dalton.wav'
-   }),
-   punch: new Howl({
-      src: './sounds/dalton-punch.wav'
-   })
+let fire = new Audio()
+fire.src ="../sounds/gunshot.mp3"
+let ahhh = new Audio()
+ahhh.src ="../sounds/ahhhh-abuelina.wav"
+let loseAbu = new Audio()
+loseAbu.src ="../sounds/lose_abuelina.wav"
+let granMa = new Audio()
+granMa.src = 'https://assets.codepen.io/21542/howler-sfx-levelup.mp3'
+let maleScream = new Audio()
+maleScream.src = '../sounds/male-scream-2.wav'
+let punch = new Audio()
+punch.src ="../sounds/dalton-punch.wav"
+let loseDal = new Audio()
+loseDal.src = "../sounds/lose_dalton.wav"
+let music = new Audio()
+music.src = "../sounds/honky-tonk-piano-ragtime-melody.wav"
 
 
 
-}
+// efectos de sonido
+// let sfx = {
+//    fire: new Howl({
+//       src: '/sounds/gunshot.wav'
+//    }),
+//    granMa: new Howl({
+//       src: 'https://assets.codepen.io/21542/howler-sfx-levelup.mp3'
+//    }),
+//    ahhh: new Howl({
+//       src: '/sounds/ahhhh-abuelina.wav'
+//    }),
+//    maleSream: new Howl({
+//       src: '/sounds/male-scream-2.wav'
+//    }),
+//    loseAbu: new Howl({
+//       src: '/sounds/lose_abuelina.wav'
+//    }),
+//    loseDal: new Howl({
+//       src: '/sounds/lose_dalton.wav'
+//    }),
+//    punch: new Howl({
+//       src: '/sounds/dalton-punch.wav'
+//    })
+// }
 
 // seleccion de canvas y creación del contexto
 const canvas = document.querySelector("#my-canvas")
@@ -98,7 +115,7 @@ window.addEventListener('keydown', ({key}) =>{
          break
       case "Control":
          game.addProjectile()
-         sfx.fire.play()
+         fire.play()  
          break
    }
 })

@@ -21,6 +21,8 @@ class Game {
       this.isGamePause = false // para pausar el juego. 
       
       this.count = 0
+
+      this.music = true
    }
    
    // agrego enemigos al array
@@ -47,6 +49,7 @@ class Game {
    addProjectile = () => {
       let projectile = new Projectiles(this.person.x, this.person.y)
       this.projectileArr.push(projectile)
+      fire.play()  
    }
 
    // colision bala enemy
@@ -62,7 +65,7 @@ class Game {
                this.projectileArr.splice(j, 1)
                this.count +=5
                score.innerHTML = Number(this.count)
-               sfx.maleSream.play()
+               maleScream.play()
                // console.log(`CONTADOR = ${this.count}`)
          }
       })  
@@ -82,7 +85,7 @@ class Game {
                this.projectileArr.splice(j, 1)
                this.count -=5
                score.innerHTML = Number(this.count)
-               sfx.ahhh.play()
+               ahhh.play()
                // console.log(`CONTADOR = ${this.count}`)
          }
       })  
@@ -96,8 +99,9 @@ class Game {
             eachEnemy.y < this.person.y + this.person.h &&
             eachEnemy.h + eachEnemy.y > this.person.y) {
             // console.log('ENEMY - COLISIÓN ')
-            sfx.punch.play()
+            punch.play()
             this.isGameOn = false
+            this.music = false
             this.gameOver()
          }
       })   
@@ -112,7 +116,7 @@ class Game {
             this.friendArr.splice(i, 1) // elimino el elemento objeto del array
             this.count +=2
             score.innerHTML = Number(this.count)
-            sfx.granMa.play()
+            granMa.play()
             // console.log(`CONTADOR = ${this.count}`)
          }
       })   
@@ -121,23 +125,23 @@ class Game {
    // limpio array Enemies cuando los elementos salen del canvas 
    removeArrEnemies = () => {
       // console.log(this.enemyArr.length)
-      if (this.enemyArr[0].x + this.enemyArr[0].w < 0 ) {
+      if (this.friendArr < 0 && this.friendArr[0].x + this.friendArr[0].w < 0) {
          this.enemyArr.shift()
          this.count -=3
          score.innerHTML = Number(this.count)
-         sfx.loseDal.play()
+         loseDal.play()
       }
    }
    
    // limpio array Friends cuando los elementos salen del canvas 
    removeArrFriends = () => {
       // console.log(this.friendArr.length)
-      if (this.friendArr[0].x + this.friendArr[0].w < 0) {
+      if (this.friendArr < 0 && this.friendArr[0].x + this.friendArr[0].w < 0) {
          this.friendArr.shift()
          this.count -=3
          score.innerHTML = Number(this.count) 
          console.log(score.innerHTML)
-         sfx.loseAbu.play()
+         loseAbu.play()
       }
    }
    
@@ -152,6 +156,8 @@ class Game {
    gameLoop = () => {
       // limpio canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+      music.play()
 
       // PINTADO DE ELEMENTOS
       ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height)
@@ -168,7 +174,7 @@ class Game {
          eachFriend.drawFriend()
       })
       this.projectileArr.forEach((eachProjectile) => {
-         eachProjectile.drawProjectile()   
+         eachProjectile.drawProjectile() 
       })
 
       // MOVIMIENTOS Y ACCIONES
@@ -197,7 +203,7 @@ class Game {
       this.removeArrFriends()
 
       // efecto de recursión. todo el funcionamiento del juego lo controlamos desde aquí.
-      if (this.isGameOn && this.isGamePause === false) 
+      if (this.isGameOn && this.music && this.isGamePause === false) 
          requestAnimationFrame(this.gameLoop)
    }
 
