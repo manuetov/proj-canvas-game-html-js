@@ -150,14 +150,13 @@ class Game {
       this.isGameOn = false;
       canvas.style.display = "none"
       gameOverScreen.style.display = "flex"
-      pauseBtn.style.display= "none"     
+      pauseBtn.style.display= "none" 
+      music.pause()    
  }
 
    gameLoop = () => {
       // limpio canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-      music.play()
 
       // PINTADO DE ELEMENTOS
       ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height)
@@ -203,8 +202,9 @@ class Game {
       this.removeArrFriends()
 
       // efecto de recursión. todo el funcionamiento del juego lo controlamos desde aquí.
-      if (this.isGameOn && this.music && this.isGamePause === false) 
+      if (this.isGameOn && this.music && this.isGamePause === false) {
          requestAnimationFrame(this.gameLoop)
+      } 
    }
 
   

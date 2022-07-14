@@ -4,21 +4,28 @@
 let game //variable global de la clase Game{}
 let fire = new Audio()
 fire.src ="./sounds/gunshot.mp3"
+fire.volume = 0.1
 let ahhh = new Audio()
 ahhh.src ="./sounds/ahhhh-abuelina.wav"
+ahh.volume = 0.1
 let loseAbu = new Audio()
 loseAbu.src ="./sounds/lose_abuelina.wav"
+loseAbu.volume = 0.1
 let granMa = new Audio()
 granMa.src = 'https://assets.codepen.io/21542/howler-sfx-levelup.mp3'
+granMa..volume = 0.1
 let maleScream = new Audio()
 maleScream.src = './sounds/male-scream-2.wav'
+maleScream.volume = 0.1
 let punch = new Audio()
 punch.src ="./sounds/dalton-punch.wav"
+punch.volume = 0.1
 let loseDal = new Audio()
 loseDal.src = "./sounds/lose_dalton.wav"
+loseDal.volume = 0.1
 let music = new Audio()
 music.src = "./sounds/honky-tonk-piano-ragtime-melody.wav"
-
+music.volume = 0.1
 
 // efectos de sonido
 // let sfx = {
@@ -74,6 +81,7 @@ const startGame = () => {
    
    // Se crea un nuevo obj que instancia la clase Game{}
    game = new Game()
+   music.play()
 
 
    // console.log(game)
