@@ -1,8 +1,8 @@
 class Enemies {
-   constructor(yParam, srcParam) {
+   constructor(xParam, yParam, srcParam) {
       this.image = new Image()
       this.image.src = srcParam
-      this.x = canvas.width 
+      this.x = xParam 
       this.y = yParam
       this.w = 80
       this.h = canvas.height * 0.15

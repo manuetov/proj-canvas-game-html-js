@@ -36,14 +36,24 @@ class Game {
          if ((random1 - random) < 100 || (random1 - random) > canvas.height) { random1 = random - this.person.h }
          // if ((random - random1) < 100) { random = random1 + this.person.h }
 
-      let enemy = new Enemies(random , "./images/dalton.gif")
-      this.enemyArr.push(enemy)
-      
-      // let enemy1 = new Enemies(random + persoPlusDistance * 2, "./images/dalton.gif")
-      // this.enemyArr.push(enemy1)
-
-      let friend = new Friends(random1 , "./images/abuelina1.png")
-      this.friendArr.push(friend)
+         let enemy = new Enemies(canvas.width, random,"./images/dalton.gif")
+         this.enemyArr.push(enemy)
+               
+         let friend = new Friends(random1, "./images/abuelina1.png")
+         this.friendArr.push(friend)
+         if (this.count > 10) {
+            let enemy1 = new Enemies(canvas.width-100, random1, "./images/dalton.gif")
+            this.enemyArr.push(enemy1)
+         }else if (this.count > 30){
+            let enemy = new Enemies(canvas.width-100, random,"./images/dalton.gif")
+            this.enemyArr.push(enemy)
+         }else if (this.count > 80){
+            let enemy1 = new Enemies(canvas.width-200, random1, "./images/dalton.gif")
+            this.enemyArr.push(enemy1)
+         }else if (this.count > 100) {
+            let enemy = new Enemies(canvas.width-200, random,"./images/dalton.gif")
+            this.enemyArr.push(enemy)
+         }
       }   
    }
 

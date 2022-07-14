@@ -69,6 +69,8 @@ const scoreDOM = document.querySelector("#scoreDOM")
 
 
 
+
+
 // *** FUNCTIONS startScreenDOM ***
 
 // inicia el juego.
